@@ -152,8 +152,3 @@ grid.addEventListener('click', function (event) {
     previousTarget = clicked;
   }
 });
-
-if (document.querySelectorAll('.card').length == document.querySelectorAll('.match').length) {
-  alert("Congratulations!");
-  window.close();
-}
