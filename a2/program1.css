@@ -1,0 +1,86 @@
+body {
+    background-color: #FFCC00;
+    color: #000000;
+    font-family: Georgia, Garamond, serif
+}
+
+table {
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th {
+    margin: 0;
+    background-color: #003366;
+    border: 2px solid #FFFFFF;
+    padding: 5px;
+    font-family: 'Century Gothic', 'Futura', Verdana, sans-serif;
+}
+
+td {
+    margin: 0;
+    background-color: #CC9933;
+    border: 2px solid #FFFFFF;
+    padding: 5px;
+}
+
+caption {
+    margin: 0;
+    background-color: #F0F0F0;
+    color: #A4A400;
+    font-weight: bold;
+    font-family: 'Century Gothic', 'Futura', Verdana, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    background-color: #F0F0F0;
+    color: #A4A400;
+    font-family: 'Century Gothic', 'Futura', Verdana, sans-serif;
+    letter-spacing: 2px;
+}
+
+h1, h2 {
+    text-align: center;
+}
+
+img {
+    height: 219px;
+}
+
+a.menu {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: rgb(230, 230, 100);
+    text-decoration: none;
+}
+
+p.indent {
+    text-indent: 40px;
+}
+
+.nav {
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: navy;
+    color: navy;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#float {
+    float: left;
+    margin-right: 20px;
+}
+
+#intro {
+    height: 225px;
+    display: table-cell;
+    vertical-align: middle;
+}

@@ -1,0 +1,179 @@
+body {
+    background-image: url("../images/wall.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+hr {
+    border: 1px solid black;
+    width: 330px;
+    margin-left: 0px;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #FF0000AA;
+}
+
+img {
+    width: 400px;
+}
+
+th {
+    font-size: 14pt;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+td.cell {
+    min-width: 150px;
+    text-align: center;
+    border: 1px solid black;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+td {
+    vertical-align: top;
+}
+
+.layout {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.title {
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.fixnav {
+    width: 250px;
+}
+
+.fixcontent {
+    width: 750px;
+}
+
+.gap {
+    width: 150px;
+}
+
+.menu td {
+    text-transform: uppercase;
+    font-size: 10pt;
+    letter-spacing: 2px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.menu tr:nth-child(even) {
+    background-color: #EFEFEF77;
+}
+
+.menu tr:nth-child(odd) {
+    background-color: #CFCFCF77;
+}
+
+.none {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.disc {
+    font-size: 12pt;
+    line-height: 24pt;
+    list-style-type: disc;
+}
+
+.default {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 24pt;
+}
+
+.footnote {
+    margin-left: 10px;
+    font-size: 10pt;
+    list-style-type: none;
+    padding: 0;
+}
+
+.highlight {
+    color: #FF0000AA;
+    font-weight: bold;
+}
+
+.description {
+    font-size: 10pt;
+}
+
+.center {
+    text-align: center;
+}
+
+.back {
+    font-size: 10pt;
+}
+
+.tcenter {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.red {
+    width: 35px;
+    height: 35px;
+    border: 1px solid red;
+    margin: 0;
+    padding: 1px;
+    border-spacing: 1px;
+    background-color: red;
+}
+
+.black {
+    width: 35px;
+    height: 35px;
+    border: 1px solid black;
+    margin: 0;
+    padding: 1px;
+    border-spacing: 1px;
+    background-color: black;
+}
+
+#heading {
+    margin-top: 100px;
+    text-align: left;
+}
+
+#blank {
+    margin: 100px;
+}
+
+#navigation {
+    margin-top: 50px;
+}
+
+#content {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #EFEFEF77;
+}

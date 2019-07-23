@@ -1,0 +1,151 @@
+body {
+    background-image: url("../images/wall.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: cover;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+hr {
+    border: 1px solid black;
+    width: 220px;
+    margin-left: 0px;
+}
+
+a {
+    color: black;
+}
+
+a:hover {
+    color: #FF0000AA;
+}
+
+img {
+    width: 400px;
+}
+
+td {
+    vertical-align: top;
+}
+
+.title {
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.subtitle {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+}
+
+.default {
+    font-size: 12pt;
+    line-height: 24pt;
+}
+
+.none {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.disc {
+    font-size: 12pt;
+    line-height: 24pt;
+    list-style-type: disc;
+}
+
+.footnote {
+    margin-left: 10px;
+    font-size: 10pt;
+    list-style-type: none;
+    padding: 0;
+}
+
+.quote {
+    margin-left: 10px;
+    margin-right: 50px;
+    font-size: 10pt;
+    list-style-type: none;
+    padding: 0;
+}
+
+.imgcomment {
+    text-transform: uppercase;
+    font-size: 12pt;
+    letter-spacing: 4px;
+    text-align: center;
+    clear: right;
+    margin-bottom: 100px;
+}
+
+.fixnav {
+    width: 250px;
+}
+
+.fixcontent {
+    width: 500px;
+}
+
+.gap {
+    width: 115px;
+}
+
+.menu td {
+    text-transform: uppercase;
+    font-size: 10pt;
+    letter-spacing: 2px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.menu tr:nth-child(even) {
+    background-color: #EFEFEF77;
+}
+
+.menu tr:nth-child(odd) {
+    background-color: #CFCFCF77;
+}
+
+.highlight {
+    color: #FF0000AA;
+    font-weight: bold;
+}
+
+.layout {
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#heading {
+    margin-top: 100px;
+    text-align: left;
+}
+
+#navigation {
+    margin-top: 50px;
+}
+
+#content {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #EFEFEF77;
+}
+
+#blank {
+    margin: 100px;
+}
+
+#image {
+    margin-top: 50px;
+    text-align: right;
+    line-height: 15pt;
+    padding: 20px;
+    
+    background-color: #EFEFEF77;
+}
