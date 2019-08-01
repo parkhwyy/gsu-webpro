@@ -6,15 +6,15 @@ require 'mysqlConnect.php';
 if(isset($_GET['edit'])){
     $edit_id=$_GET['edit'];
 
-    $sel="select * from attendant where id_attendant='$edit_id'";
+    $sel="select * from parkings where id='$edit_id'";
     $run=mysqli_query($con,$sel);
 
     $row=mysqli_fetch_array($run);
-    $Fname=$row['Fname'];
-    $Lname=$row['Lname'];
-    $mobile_no=$row['mobile_no'];
     $location=$row['location'];
-    $username=$row['username'];
+    $street=$row['street'];
+    $name=$row['name'];
+    $slot=$row['slot'];
+    $price=$row['price'];
   }
 ?>
 <!DOCTYPE html>
@@ -55,7 +55,7 @@ if(isset($_GET['edit'])){
       <header class="header black-bg">
 
             <!--logo start-->
-            <a href="index.php" class="logo"><b>smart-parking</b></a>
+            <a href="admin.php" class="logo"><b>smart-parking</b></a>
             <!--logo end-->
             <div class="top-menu">
             </div>
@@ -93,33 +93,33 @@ if(isset($_GET['edit'])){
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-            <h3><i class="fa fa-angle-right"></i> Update Attendant Details</h3>
+            <h3><i class="fa fa-angle-right"></i> Update Parkings Details</h3>
           	<div class="row mt">
           		<div class="col-lg-12">
               <form class="form-horizontal" action="" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <div class="col-sm-10">
-            <input type="text" class="form-control" name="location" value="<?php echo $location; ?>"/>
+            <input type="text" class="form-control"  placeholder="location" name="location" value="<?php echo $location; ?>"/>
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-10">
-            <input type="text" class="form-control"   name="Fname" value="<?php echo $Fname; ?>" />
+            <input type="text" class="form-control"  placeholder="Street" name="street" value="<?php echo $street; ?>" />
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-10">
-            <input type="text" class="form-control"   name="Lname" value="<?php echo $Lname; ?>" />
+            <input type="text" class="form-control"  placeholder="Parking name" name="name" value="<?php echo $name; ?>" />
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-10">
-            <input type="text" class="form-control"  name="username" value="<?php echo $username; ?>" />
+            <input type="text" class="form-control" placeholder="Number of slot" name="slot" value="<?php echo $slot; ?>" />
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-10">
-            <input type="text" class="form-control"  name="mobile_no" value="<?php echo $mobile_no; ?>" />
+            <input type="text" class="form-control" placeholder="Amount" name="price" value="<?php echo $price; ?>" />
           </div>
         </div>
         <div class="form-group">
@@ -140,21 +140,21 @@ if(isset($_GET['edit'])){
 if(isset($_POST['update'])){
 
   $location = mysqli_real_escape_string($con,$_POST['location']);
-  $Fname=mysqli_real_escape_string($con,$_POST['Fname']);
-  $Lname =mysqli_real_escape_string($con,$_POST['Lname']);
-  $mobile_no =mysqli_real_escape_string($con,$_POST['mobile_no']);
-  $username =mysqli_real_escape_string($con,$_POST['username']);
+  $street=mysqli_real_escape_string($con,$_POST['street']);
+  $name =mysqli_real_escape_string($con,$_POST['name']);
+  $slot =mysqli_real_escape_string($con,$_POST['slot']);
+  $price =mysqli_real_escape_string($con,$_POST['price']);
 
-  $update="UPDATE `attendant` SET `location` = '$location', `Fname` = '$Fname', `Lname` = '$Lname', `mobile_no` = '$mobile_no', `username` = '$username' WHERE `attendant`.`id_attendant`='$edit_id';";
+  $update="UPDATE `parkings` SET `location` = '$location', `street` = '$street', `name` = '$name', `slot` = '$slot', `price` = '$price' WHERE `parkings`.`id`='$edit_id';";
     $run_update=mysqli_query($con,$update);
     if($run_update){
       echo"<script>alert('Successful updated')</script>";
-      echo"<script>window.open('basic_table2.php','_self')</script>";
+      echo"<script>window.open('admin_parkings.php','_self')</script>";
 
     }
     else{
       echo"<script>alert('Error please try again')</script>";
-      echo"<script>window.open('basic_table2.php','_self')</script>";
+      echo"<script>window.open('admin_parkings.php','_self')</script>";
     }
 }
 

@@ -1,6 +1,5 @@
 <!--Parking spaces to display here-->
 <?php
-require '../update_slots.php';
 $query_parkings = "SELECT * FROM `parkings`";
 $parkings_result = mysqli_query($con, $query_parkings);
 
@@ -22,7 +21,7 @@ while ($parking = mysqli_fetch_array($parkings_result)) {
       <li class="list-group-item"><span class="glyphicon glyphicon-map-marker"></span> <?=$parking_street; ?></li>
       <li class="list-group-item"><span class="glyphicon glyphicon-tags"></span> <?=$parking_slot; ?></li>
     </ul>
-    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#reserve<?=$parking_id ; ?>">select Now!!</button>
+    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#reserve<?=$parking_id ; ?>">Park Here</button>
 
   </div>
 </div>
@@ -39,8 +38,8 @@ while ($parking = mysqli_fetch_array($parkings_result)) {
           <li class="list-group-item"><span class="glyphicon glyphicon-home"></span> <?=$parking_name; ?></li>
           <li class="list-group-item"><span class="glyphicon glyphicon-tags"></span> <?=$parking_slot; ?> total slots </li>
           <li class="list-group-item"><span class="glyphicon glyphicon-tag"></span> <?=$parking_slot; ?> Remaining Slots</li>
-          <li class="list-group-item"><span class="glyphicon glyphicon-credit-card"></span> Ksh. <?=$parking_price; ?> Per Slot Per Hour</li>
-          <li class="list-group-item total"  ><div id="total<?=$parking_id; ?>"> Ksh.<?=$parking_slot; ?> Total cost</div></li>
+          <li class="list-group-item"><span class="glyphicon glyphicon-credit-card"></span> $<?=$parking_price; ?> Per Slot Per Hour</li>
+          <li class="list-group-item total"  ><div id="total<?=$parking_id; ?>"> $<?=$parking_slot; ?> Total cost</div></li>
 
           <li class="list-group-item">
             <div class="input-group">
@@ -54,7 +53,7 @@ while ($parking = mysqli_fetch_array($parkings_result)) {
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Select this space</button>
+        <button type="button" class="btn btn-primary">Confirm</button>
       </div>
     </div>
   </div>
@@ -71,14 +70,14 @@ $(function(){
         if( Number(remaining)> 0 ){
            $("#status1<?=$parking_id; ?>").html("");
 
-            $("#select<?=$parking_id;?>").prop('disabled', false).attr('class', 'btn btn-primary').html('Select this space');
+            $("#select<?=$parking_id;?>").prop('disabled', false).attr('class', 'btn btn-primary').html('Confirm');
         }else{
-           $("#status1<?=$parking_id; ?>").html("This Parking is Fully Packed and Can Not Hold More Request").css("color", "red");
+           $("#status1<?=$parking_id; ?>").html("This lot is full and cannot hold more requests.").css("color", "red");
            $("#select<?=$parking_id;?>").prop('disabled', true).attr('class', 'btn btn-danger').html('Disabled...');
         }
 
             total = cost * hours * slot;
-            $("#total<?=$parking_id; ?>").html("KSH. "+total+" TOTAL COST");
+            $("#total<?=$parking_id; ?>").html("$"+total+" TOTAL COST");
 
   });
 

@@ -1,5 +1,4 @@
 <?php session_start();
-require 'update_slots.php';
 if (!$_SESSION['email']) {
   header("location: admin_login.php");
 }
@@ -61,7 +60,7 @@ else {
       <header class="header black-bg">
 
             <!--logo start-->
-            <a href="index.php" class="logo"><b>Smart-parking</b></a>
+            <a href="admin.php" class="logo"><b>Smart-parking</b></a>
             <!--logo end-->
             <div class="top-menu">
             	<ul class="nav pull-right top-menu">
@@ -87,11 +86,9 @@ else {
 
 
                   <ul class="left-links">
-                      <li><a  href="blank.php"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Upload New Parkings</a></li>
-                      <li><a  href="attendant.php"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Add new Parking Attendant</a></li>
-                      <li><a  href="basic_table.php"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Parkings</a></li>
-                        <li><a  href="basic_table2.php"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Attendants</a></li>
-                          <li><a  href="admin_request.php"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Requests</a></li>
+                      <li><a  href="admin_upload.php"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Upload New Parkings</a></li>
+                      <li><a  href="admin_parkings.php"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Parkings</a></li>
+                      <li><a  href="admin_request.php"><i class="fa fa-hand-o-right" aria-hidden="true"></i> Requests</a></li>
                   </ul>
                    </div>
 

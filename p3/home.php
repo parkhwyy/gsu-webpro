@@ -1,8 +1,7 @@
 <?php
 session_start();
 require 'mysqlConnect.php';
-require 'update_slots.php';
-require "driver.details.php";
+require "driver_details.php";
 if (!$_SESSION['driver_email']) {
   header("location: index.php");
 }
@@ -80,7 +79,7 @@ else {
      
          <div class="cart-nav col-xs-4">
            <ul>
-             <li class="list-group-item" id="requests">           
+             <li class="list-group-item">           
                 <div class="thumbnail">              
                       <div class="caption">
                       <center>
@@ -95,20 +94,23 @@ else {
 
              <li class="list-group-item" >
                <select class="form-control" onchange="filter_park()" id="city">
-                 <option value="Mombasa">Mombasa</option>
+                 <option value="Atlanta">Atlanta</option>
                </select>
              </li>
 
              <li class="list-group-item">
                <select class="form-control" onchange="filter_park()" id="street">
-                 <option value="">----[Search Street]----</option>
-                 <option value="Tudor">Tudor</option>
-                 <option value="Kizingo">Kizingo</option>
-                 <option value="Tononoka">Tononoka</option>
+                 <option value="">Select Street</option>
+                 <option value="Peachtree">Peachtree</option>
+                 <option value="Courtland">Courtland</option>
+                 <option value="Edgewood">Edgewood</option>
+                 <option value="Auburn">Auburn</option>
+                 <option value="Decatur">Decatur</option>
+                 <option value="Piedmont">Piedmont</option>
                </select>
              </li>
 
-             <li class="list-group-item" id="requests"><a><span class="glyphicon glyphicon-envelope"></span> Notifications</a></li>
+             <li class="list-group-item" id="requests"><a><span class="glyphicon glyphicon-envelope"></span> Requests</a></li>
 
             
            </ul>
@@ -144,11 +146,7 @@ $("#home").load("parkings/parkings.php");
   }
 
   $("#requests").click(function(){
-    $("#home").load("feedback/requests.php");  
-  });
-
-  $("#receipt").click(function(){
-    $("#home").load("receipt/new.php");  
+    $("#home").load("requests.php");  
   });
 
     </script>

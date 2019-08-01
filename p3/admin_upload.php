@@ -1,6 +1,5 @@
 <?php
 require 'mysqlConnect.php';
-require 'update_slots.php';
 session_start();
 ?>
 <!DOCTYPE html>
@@ -39,7 +38,7 @@ session_start();
       <header class="header black-bg">
 
             <!--logo start-->
-            <a href="index.php" class="logo"><b>Smart-parking</b></a>
+            <a href="admin.php" class="logo"><b>Smart-parking</b></a>
             <!--logo end-->
 
         </header>
@@ -60,6 +59,7 @@ session_start();
                           <span>Dashboard</span>
                       </a>
                   </li>
+
               </ul>
               <!-- sidebar menu end-->
           </div>
@@ -72,47 +72,52 @@ session_start();
       <!--main content start-->
       <section id="main-content">
           <section class="wrapper site-min-height">
-          	<h3><i class="fa fa-angle-right"></i> Add Parking Attendant Details</h3>
+          	<h3><i class="fa fa-angle-right"></i> Upload Parkings Details</h3>
           	<div class="row mt">
           		<div class="col-lg-12">
-              <form class="form-horizontal" action="attendant.php" method="POST" enctype="multipart/form-data">
+              <form class="form-horizontal" action="admin_upload_upload.php" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <div class="col-sm-10">
-            <input type="text" class="form-control"  placeholder="first name" name="Fname">
+            <input type="text" class="form-control"  placeholder="Location" name="location">
           </div>
         </div>
         <div class="form-group">
           <div class="col-sm-10">
-            <input type="text" class="form-control"  placeholder="last name" name="Lname">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-10">
-            <input type="text" class="form-control"  placeholder="mobile number" name="mobile_no">
-          </div>
-        </div>
-        <div class="form-group">
-          <div class="col-sm-10">
-              <select name="location" class="form-control">
+              <select name="street" class="form-control">
                 <option value="">Select Street</option>
-                 <option value="Tudor">Tudor</option>
-                 <option value="Kizingo">Kizingo</option>
-                 <option value="Tononoka">Tononoka</option>
+                 <option value="Peachtree">Peachtree</option>
+                 <option value="Courtland">Courtland</option>
+                 <option value="Edgewood">Edgewood</option>
+                 <option value="Auburn">Auburn</option>
+                 <option value="Decatur">Decatur</option>
+                 <option value="Piedmont">Piedmont</option>
               </select>
           </div>
-          </div>
-          <div class="form-group">
+        </div>
+        <div class="form-group">
           <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="username" name="username">
-          </div>
-          </div>
-          <div class="form-group">
-          <div class="col-sm-10">
-            <input type="text" class="form-control" placeholder="Password" name="password">
+            <input type="text" class="form-control"  placeholder="Parking name" name="name">
           </div>
         </div>
         <div class="form-group">
-          <div class="col-sm-offset-6 col-sm-10">
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Number of slot" name="slot">
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Number of remaining slot" name="remaining_slots">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-10">
+            <input type="text" class="form-control" placeholder="Amount" name="price">
+          </div>
+        </div>
+        <br><br><br>
+        <div class="form-group">
+          <div class="col-sm-10">
             <button type="submit" class="btn btn-default" name="sub">Submit</button>
           </div>
         </div>
@@ -126,34 +131,6 @@ session_start();
 
 <!--main content end-->
 <!--footer start-->
-<?php
-if(isset($_POST['sub'])){
-  $Fname=mysqli_real_escape_string($con,$_POST['Fname']);
-	$Lname=mysqli_real_escape_string($con,$_POST['Lname']);
-	$mobile_no=mysqli_real_escape_string($con,$_POST['mobile_no']);
-  $location=mysqli_real_escape_string($con,$_POST['location']);
-  $username=mysqli_real_escape_string($con,$_POST['username']);
-  $password=mysqli_real_escape_string($con,$_POST['password']);
-  $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
-
-  if($Fname==''&& $Lname==''&& $mobile_no=='' && $location==''){
-		echo"<script>alert('please fill all field')</script>";
-      echo"<script>window.open('attendant.php','_self')</script>";
-		exit();
-	}
-  else{
-
-		$insert="INSERT INTO `attendant` (`id_attendant`, `Fname`, `Lname`, `mobile_no`, `location`,`username`,`password`) VALUES (NULL, '$Fname', '$Lname', '$mobile_no', '$location','$username','$password');";
-		$run_insert=mysqli_query($con,$insert);
-		if($run_insert){
-			echo"<script>alert('registration successful')</script>";
-      echo"<script>window.open('attendant.php','_self')</script>";
-
-
-		}
-}}
-?>
-
 <footer class="site-footer">
     <div class="text-center">
         &copy; <?php echo date("Y"); ?> Copyright.

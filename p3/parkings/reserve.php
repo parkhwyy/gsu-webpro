@@ -1,7 +1,6 @@
 <?php
 session_start();
 require '../mysqlConnect.php';
-require '../update_slots.php';
 
 if($_POST){
 
@@ -29,16 +28,16 @@ if(mysqli_num_rows($result_cust)>0){
 
               $now_slots = $remaining_slots - $slot_no;
               $update = "UPDATE `parkings` SET `remaining_slots`='$now_slots' WHERE `id`='$slot_id'";
-              $book = "INSERT INTO `requests`(`id`, `parking_id`, `slots`, `hours`, `cost`, `customer`,`status`) VALUES (NULL,'$slot_id','$slot_no','$slot_hours','$slots_cost','$customer','requested')";
+              $reserve = "INSERT INTO `requests`(`id`, `parking_id`, `slots`, `hours`, `cost`, `customer`,`status`) VALUES (NULL,'$slot_id','$slot_no','$slot_hours','$slots_cost','$customer','requested')";
 
-              if (mysqli_query($con, $book) && mysqli_query($con, $update)) {
-              echo "You have successfully Reserved this space";
+              if (mysqli_query($con, $reserve) && mysqli_query($con, $update)) {
+              echo "You have successfully reserved the space.";
               }else{
-                echo "Failed to Reserve this parking space";
+                echo "Failed to reserve the parking space.";
               }
 
         }else {
-          echo "ERROR!! Number of slots exceeds the remaining slots";
+          echo "ERROR! The number of slots exceeds the remaining slots.";
         }
 
 }

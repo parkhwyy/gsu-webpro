@@ -1,6 +1,5 @@
 <?php session_start();
 require 'mysqlConnect.php';
-require 'update_slots.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,7 +38,7 @@ require 'update_slots.php';
       <header class="header black-bg">
 
             <!--logo start-->
-            <a href="index.php" class="logo"><b>Smart-parking</b></a>
+            <a href="admin.php" class="logo"><b>Smart-parking</b></a>
             <!--logo end-->
 
         </header>
@@ -127,8 +126,8 @@ if(isset($_GET['delete']))
   $run_delete=mysqli_query($con,$delete);
   if($run_delete)
   {
-    echo "<script>alert('request deleted successfully')</script>";
-    echo "<script>window.open('request.php','_self')</script>";
+    echo "<script>alert('Request deleted successfully.')</script>";
+    echo "<script>window.open('admin_request.php','_self')</script>";
   }
 }
 ?>

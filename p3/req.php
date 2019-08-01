@@ -1,8 +1,7 @@
 
 <?php
 session_start();
-@require '../update_slots.php';
-require '../mysqlConnect.php';
+require 'mysqlConnect.php';
 ?>
 
 <style>
@@ -24,9 +23,7 @@ require '../mysqlConnect.php';
   <th>Hours</th>
   <th>Cost</th>
   <th>When</th>
-  <th>Status</th>
-  <th>Action</th>
- 
+  <th>Status</th> 
 
 
 </thead>
@@ -59,7 +56,7 @@ while ($request = mysqli_fetch_array($res)) {
   <td><?=$street; ?></td>
   <td><?=$slots; ?></td>
   <td><?=$hours; ?> hours</td>
-  <td>Ksh. <?=$cost; ?></td>
+  <td>$<?=$cost; ?></td>
   <td><?=$time; ?></td>
   <td><?=$stat; ?></td>
   <td></td>
@@ -90,7 +87,6 @@ while ($request = mysqli_fetch_array($res)) {
     $stat = $request['status'];
     $location = $request['location'];
     $street = $request['street'];
-$url = "print1.php?request_id=".urlencode($id);
 ?>
 <tr>
   <td>#</td>
@@ -99,10 +95,9 @@ $url = "print1.php?request_id=".urlencode($id);
   <td><?=$street; ?></td>
   <td><?=$slots; ?></td>
   <td><?=$hours; ?> hours</td>
-  <td>Ksh. <?=$cost; ?></td>
+  <td>$<?=$cost; ?></td>
   <td><?=$time; ?></td>
   <td><?=$stat; ?></td>
-  <td><a href="<?=$url;?> " class="btn btn-default" type="submit"><span class="glyphicon glyphicon-save-file"></span> Print</a></td>
 </tr>
 
 <?php    
