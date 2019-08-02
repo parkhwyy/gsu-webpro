@@ -1,155 +1,50 @@
 <?php
-session_start();
-require 'mysqlConnect.php';
-require "driver_details.php";
-if (!$_SESSION['driver_email']) {
-  header("location: index.php");
-}
-else {
-
+  include('session.php');
 ?>
+
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Smart Parking Web Portal</title>
-    <meta charset="utf-8">
+<html lang="en">  
+
+<head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="assets/css/bootstrap.css" rel="stylesheet">
-    <link href="datatable/dataTables.bootstrap.min.css" rel="stylesheet">
-    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link href="datatable/keyTable.bootstrap.min.css" rel="stylesheet">
-    <link href="custom.css" rel="stylesheet">
-    <style>
-
-
-
-.area{
-  margin-bottom: 15px;
-}
-
-.cart-nav ul li {
-  margin:3%;
-  padding: 3%;
-  color: #0000 !important;
-}
-
-.Head {
-  text-transform: uppercase;
-   
-   color: 	#009688 !important;
-}
-
-.modal-backdrop {
-    z-index: 1020 !important;
-}
-
-.parking_text {
-  color: #2F4F4F !important;
-  text-transform: uppercase;
-}
-
-.total {
-  color: #FF0000 !important;
-}
-.modal { background: rgba(000, 000, 000, 0.8); min-height:1000000px; }
-
-.fa-circle {
-  color: green;
-}
-    </style>
+  <title>AutoMoko Car Rentals</title>
+  
+	<link rel="stylesheet" type="text/css" href="webstyle.css">
 </head>
+
 <body>
-    <div >
-      <div class="container">
-         <div class="col-md-3"></div>
-         <div class="col-md-8">
-                 <center><h1 class="colors">SMART PARKING Portal</h1></center>
 
-         </div>
-         <div class="col-md-1"></div>
-</div>
+  <div class="header">
+  <p><br><br></p>
+  </div>
 
-<div class="row">
-   <div class="container">
-     
-         <div class="cart-nav col-xs-4">
-           <ul>
-             <li class="list-group-item">           
-                <div class="thumbnail">              
-                      <div class="caption">
-                      <center>
-                        <h3><?=$name?></h3>
-                        <p>(<?=$email?>)</p>
-                        <p><i id="#online" class="fa fa-circle" aria-hidden="true"></i> Online</p>
-                        <p><a href="logout.php"><i class="fa fa-power-off" aria-hidden="true"></i> LOGOUT</a></p>
-                        </center>
-                      </div>
-                    </div>                   
-             </li> 
+  <div class="bg">
+    <div class="row">
 
-             <li class="list-group-item" >
-               <select class="form-control" onchange="filter_park()" id="city">
-                 <option value="Atlanta">Atlanta</option>
-               </select>
-             </li>
+      <div class="column side">
+        <ul id="mainMenu">
+          <li><a class="active" href="#home">Home</a></li>
+          <li><a href="profile.php">Reservations</a></li>
+          <li><a href="car.php">Rent a Car</a></li>
+          <li><a href="parking.php">Prepay for Parking</a></li>
+          <li><a href="viewcart.php">Checkout</a></li>
+        </ul>
+      </div>
 
-             <li class="list-group-item">
-               <select class="form-control" onchange="filter_park()" id="street">
-                 <option value="">Select Street</option>
-                 <option value="Peachtree">Peachtree</option>
-                 <option value="Courtland">Courtland</option>
-                 <option value="Edgewood">Edgewood</option>
-                 <option value="Auburn">Auburn</option>
-                 <option value="Decatur">Decatur</option>
-                 <option value="Piedmont">Piedmont</option>
-               </select>
-             </li>
+      <div class="column middle">
+        <div class="card">
+          <h2 id="subheading">Let's get started!</h2>   
+          <p>Logged in as: <?php echo $_SESSION['login_user']; ?></p>
+          <a href="profile.php"><button id="profile" type="button">Reservations</button></a>
+          <a href="logout.php"><button id="logout" type="button">Logout</button></a>
+          <br><br>
+        </div> 
+      </div>
 
-             <li class="list-group-item" id="requests"><a><span class="glyphicon glyphicon-envelope"></span> Requests</a></li>
+    </div>
+  </div>
 
-            
-           </ul>
-         </div>
-
-         <div class="content col-xs-8">
-            <div id = "home">
-
-            </div>
-         </div>
-
-   </div>
-</div>
-
-
-
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="jquery/jquery.min.js"></script>
-    <script src="assets/js/bootstrap.min.js"></script>
-
-    <script>
-$("#home").load("parkings/parkings.php");
-
-  function filter_park(){
-    var city1 = $("#city").val();
-    var street1 = $("#street").val();
- $.post("parkings/parkings.php", {city:city1, street:street1}, function(data){
-    $("#home").html(data);
- })
-
-  }
-
-  $("#requests").click(function(){
-    $("#home").load("requests.php");  
-  });
-
-    </script>
-  </body>
+</body>
 </html>
-<?php } ?>

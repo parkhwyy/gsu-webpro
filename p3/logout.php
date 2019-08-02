@@ -1,6 +1,7 @@
 <?php
-session_start();
-$http_referer = $_SERVER['HTTP_REFERER'];
-session_destroy();
-header('location: '.$http_referer);
+   session_start();
+
+   if(session_destroy()) {
+      header("location: index.php");
+   }
 ?>
