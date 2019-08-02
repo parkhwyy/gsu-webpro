@@ -1,31 +1,6 @@
-
 <?php
    include("config.php");
    session_start();
-   $error = "";
-   $_SESSION['login_user'] = "";
-
-   //If there is a post for username or password, query the database
-   if($_SERVER["REQUEST_METHOD"] == "POST") {
-
-      $myusername = mysqli_real_escape_string($db,$_POST['username']);
-      $mypassword = mysqli_real_escape_string($db,$_POST['password']);
-
-      //Search the database for an entry matching the username and passowrd
-      $sql = "SELECT username FROM customers WHERE username = '$myusername' and password = '$mypassword'";
-      $result = mysqli_query($db,$sql);
-      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
-
-      $count = mysqli_num_rows($result);
-
-      if($count == 1) {
-         $_SESSION['login_user'] = $myusername;
-          header("location: home.php");
-      } else {
-          //If the user doesn't exist, send error message to register user
-         $error = 'Your Login Name or Password is invalid. Click here to register: <a href="register.php"><button>Register</button></a>';
-      }
-   }
 ?>
 
 <!DOCTYPE html>

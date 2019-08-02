@@ -3,8 +3,9 @@
    session_start();
    $error = "";
 
-   //If username and password are posted, query the database
-   if (isset($_POST['username']) && isset($_POST['password'])){
+   if (isset($_POST['fullname']) && isset($_POST['email']) && isset($_POST['username']) && isset($_POST['password'])){
+     $fullname = $_POST['fullname'];
+     $email = $_POST['email'];
      $username = $_POST['username'];
      $password = $_POST['password'];
 
@@ -20,7 +21,7 @@
      }else{
 
        //Create new user in database
-       $query = "INSERT INTO `customers` (username, password) VALUES ('$username', '$password')";
+       $query = "INSERT INTO `customers` (`fullname`, `email`, `username`, `password`) VALUES ('$fullname', '$email', '$username', '$password')";
        $result = mysqli_query($db, $query);
 
        if($result){
@@ -38,7 +39,7 @@
             header("location: home.php");
          }
        } else {
-         $error ="User registration failed";
+         $error ="User registration failed.";
        }
      }
    }
@@ -78,18 +79,32 @@
             <form method = "POST">
               <table class="centered">
               <tr>
+                <td>Full Name: </td>
+                <td><input type="text" name="fullname" class="box" required></td>
+              </tr>
+
+              <tr>
+                <td>E-mail: </td>
+                <td><input type="text" name="email" class="box" onchange="email_validate(this.value)" required></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td id="emailstatus"></td>
+              </tr>
+
+              <tr>
                 <td>Username: </td>
-                <td><input type="text" name="username" class="box"></td>
+                <td><input type="text" name="username" class="box" required></td>
               </tr>
 
               <tr>
                 <td>Password: </td>
-                <td><input type="password" name="password" class="box"></td>
+                <td><input type="password" name="password" class="box" required></td>
               </tr>
               </table>
 
               <br>
-              <input type="submit" value=" Submit ">
+              <input id="submitbtn" type="submit" value=" Submit ">
             </form>
 
             <br>
@@ -101,5 +116,29 @@
     </div>
 
 </body>
+
+<script>
+
+function email_validate(email)
+{
+var regMail = /^([_a-zA-Z0-9-]+)(\.[_a-zA-Z0-9-]+)*@([a-zA-Z0-9-]+\.)+([a-zA-Z]{2,3})$/;
+   var status = document.getElementById("emailstatus");
+    if(regMail.test(email) == false)
+    {
+    document.getElementById("emailstatus").innerHTML = '<span class="warning">Email address is not valid.</span>';
+        status.style.color = "#f44336";
+        status.style.fontSize = "9pt";
+        document.getElementById("submitbtn").disabled = true;
+    }
+    else
+    {
+    document.getElementById("emailstatus").innerHTML = '<span class="valid">Email address is valid!</span>';
+        status.style.color = "#00838f ";
+        status.style.fontSize = "9pt";
+        document.getElementById("submitbtn").disabled = false;
+    }
+}
+
+</script>
 
 </html>

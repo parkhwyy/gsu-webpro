@@ -37,23 +37,27 @@
 
           <h1>Order Review</h1>
 
-          <table>
+          <table class="centered">
             <tr>
-            <th>Item Name</th>
-            <th>Price</th>
+              <th width="50%">Item Name</th>
+              <th width="50%">Price</th>
             </tr>
+            <tr height="20px"></tr>
 
             <?php
             $_SESSION['total'] = 0;
 
             //Print table of all the items in the cart
-            foreach($_SESSION['shoppingCart'] as $value){
-              echo '<tr>';
-              echo '<td width="2%">' . $value[0] . '</td>';
-              echo '<td width="2%" style="text-align: center;">$' . $value[1] . '</td>';
-              echo '</tr>';
-              $_SESSION['total'] += $value[1];
+            if (isset($_SESSION['shoppingCart'])) {
+              foreach($_SESSION['shoppingCart'] as $value){
+                echo '<tr>';
+                echo '<td>' . $value[0] . '</td>';
+                echo '<td style="text-align: center;">$' . $value[1] . '</td>';
+                echo '</tr>';
+                $_SESSION['total'] += $value[1];
+              }
             }
+            echo '<tr height="20px"></tr>';
             echo '<tr>';
             echo '<td> Total: </td>';
             echo '<td style="text-align: center;">$' . $_SESSION['total'] . '</td>';

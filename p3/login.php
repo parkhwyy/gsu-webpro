@@ -27,7 +27,7 @@
 
 <head>
 
-  <title>Final Project - Travel Booking</title>
+  <title>AutoMoko Car Rentals</title>
   <link rel = "stylesheet" type="text/css" href="webstyle.css">
 
 </head>
@@ -59,12 +59,12 @@
                     <table class="centered">
                     <tr>
                         <td>Username: </td>
-                        <td><input type="text" name="username" class="box"></td>
+                        <td><input type="text" name="username" class="box" required></td>
                     </tr>
 
                     <tr>
                         <td>Password: </td>
-                        <td><input type="password" name="password" class="box"></td>
+                        <td><input type="password" name="password" class="box" required></td>
                     </tr>
                     </table>
 

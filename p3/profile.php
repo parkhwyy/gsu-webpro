@@ -43,7 +43,7 @@
         <div class="card">
           <p>Logged in as: <?php echo $_SESSION['login_user']; ?></p>
 
-          <h2>Reservations</h2>
+          <h1>Reservations</h1>
 
           <table class="centered">
 
@@ -54,6 +54,7 @@
             <th>Parking</th>
             <th>Parking Price</th>
           </tr>
+          <tr height="20px"></tr>
 
           <?php include('orderquery.php'); ?>
 
