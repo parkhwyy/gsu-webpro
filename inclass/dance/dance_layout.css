@@ -1,0 +1,23 @@
+body {
+    background: #000000;
+}
+
+#lights {
+    position: absolute;
+    left: 120px;
+    top: 0px;
+    margin-bottom: 0px;
+}
+
+#dancer {
+    position: absolute;
+    left: 250px;
+    top: 50px;
+}
+
+#floor {
+    position: absolute;
+    left: 0px;
+    top: 265px;
+    margin-top: 0px;
+}

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercise 1</title>
+</head>
+<body>
+    <form name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post" target="hiddenFrame">
+        <table>
+
+        <tr>
+            <td></td>
+            <td id="noid"></td>
+        </tr>
+
+        <tr>
+            <td>ID:</td>
+            <td><input type="text" name="id"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td id="nofname"></td>
+        </tr>
+
+        <tr>
+            <td>First Name:</td>
+            <td><input type="text" name="fname"></td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td id="nolname"><u></u></td>
+        </tr>
+
+        <tr>
+            <td>Last Name:</td>
+            <td><input type="text" name="lname"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Add"></td>
+        </tr>
+        </table>
+
+        <p id="result"></p>
+
+        <iframe name="hiddenFrame" width="0" height="0" border="0" style="display: none;"></iframe>
+    </form>
+
+    <script>
+        function validateForm() {
+            var id = document.forms["myForm"]["id"].value;
+            var fname = document.forms["myForm"]["fname"].value;
+            var lname = document.forms["myForm"]["lname"].value;
+
+            if (id == "") {
+                document.getElementById("noid").innerHTML = "Please enter an ID.";
+            } else {
+                document.getElementById("noid").innerHTML = "";
+            }
+
+            if (fname == "") {
+                document.getElementById("nofname").innerHTML = "Please enter a First Name.";
+            } else {
+                document.getElementById("nofname").innerHTML = "";
+            }
+
+            if (lname == "") {
+                document.getElementById("nolname").innerHTML = "Please enter a Last Name.";
+            } else {
+                document.getElementById("nolname").innerHTML = "";
+            }
+
+            if (id == "" && fname != "" && lname != "") {
+                alert("You forgot to fill in the following field: ID");
+            } else if (id != "" && fname == "" && lname != "") {
+                alert("You forgot to fill in the following field: First Name");
+            } else if (id != "" && fname != "" && lname == "") {
+                alert("You forgot to fill in the following field: Last Name");
+            } else if (id == "" && fname == "" && lname != "") {
+                alert("You forgot to fill in the following field: ID, First Name");
+            } else if (id == "" && fname != "" && lname == "") {
+                alert("You forgot to fill in the following field: ID, Last Name");
+            } else if (id != "" && fname == "" && lname == "") {
+                alert("You forgot to fill in the following field: First Name, Last Name");
+            } else if (id == "" && fname == "" && lname == "") {
+                alert("You forgot to fill in the following field: ID, First Name, Last Name");
+            } else {
+                document.getElementById("result").innerHTML = `ID: ${id}` + "<br>" + `First Name: ${fname}` + "<br>" + `Last Name: ${lname}`;
+            }
+        }
+    </script>
+
+    <style>
+        #noid { 
+            text-decoration: underline;
+            color: red;
+        }
+
+        #nofname {
+            text-decoration: underline;
+            color: red;
+        }
+
+        #nolname {
+            text-decoration: underline;
+            color: red;
+        }
+    </style>
+</body>
+</html>

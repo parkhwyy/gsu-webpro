@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="register.js" defer></script>
+</head>
+
+<body>
+    <form action="formtest.php" method="post" id="form">
+    <div class="registration-page">
+        <div class="form">
+            <h3>User Registration</h3>
+            <label>Full Name</label>
+            <input type="text" name="fullName" id="fullName" title="Enter your first and last name" onblur="errorCheck()" required>
+            <br>
+            <label>E-mail</label>
+            <input type="text" name="email" id="email" title="Input your email address" onblur="errorCheck()" required>
+            <br>
+            <label>Password</label>
+            <input type="password" name="password" id="password" title="Enter password" value="" onblur="errorCheck()" required>
+            <br>
+            <label>Confirm Password</label>
+            <input type="password" name="confirmPassword" id="passwordConfirm" title="Confirm your password" value="" onblur="errorCheck()" required>
+            <br>
+            <div id="formErrors"></div>
+            <input type="submit" name="submit" id="signup" value="Register" disabled>
+        </div>
+    </div>
+    </form>
+</body>
+
+</html>
