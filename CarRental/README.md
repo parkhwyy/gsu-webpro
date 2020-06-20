@@ -1,6 +1,6 @@
 # Rental Car System 
 
-![Image of Webpage](CarRental/car-rental/img/webpage.png)
+![Image of Webpage](https://github.com/parkhwyy/webpro/blob/master/CarRental/car-rental/img/webpage.png)
 
 ### This project is developed using [PHP](https://github.com/php), [JavaScript](https://javascript.com), [HTML](https://html.com) and [CSS](https://github.com/css)
 For a live demo and code overview watch our [Youtube Video](https://www.youtube.com/watch?v=4ir_MeqD5Kg&feature=emb_title)
