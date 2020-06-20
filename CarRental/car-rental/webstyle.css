@@ -1,0 +1,251 @@
+
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  background-image: url("https://walldiskpaper.com/wp-content/uploads/2014/09/Porsche-911-Wallpaper-Image-Picture-2015.jpg");
+   font-family: Arial, Helvetica, sans-serif;
+   -webkit-column-span: all; /* Chrome, Safari, Opera */
+  column-span: all;
+  text-align: center;
+}
+
+#images{
+  font-family: monospace;
+  position: absolute;
+  bottom:40px;
+  right:50px;
+  font-size: 10pt;
+}
+button {
+    background-color: #cc0000;
+    float: center;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+    margin-left:30px;
+    margin-right:30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+img {
+  width:  300px;
+  height: 300px;
+  float: right;
+}
+
+/* Style the header */
+.header {
+ background-image: url("https://cdn5.f-cdn.com/contestentries/922684/19400184/5872cf9e62273_thumb900.jpg");
+  background-position: center;
+  background-color: black;
+  max-width: 100%;
+   padding: 80px;
+  text-align: center;
+  border: 3px solid #555;
+  font-family: Impact;
+  background-repeat:no-repeat;
+}
+
+#cardtype{
+  border: 1px solid black;
+  width:  32px;
+  height: 22px;
+}
+
+ul.a{
+list-style-type: circle; 
+
+}
+
+ul  {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 300px;
+  background-color: white;
+  }
+
+
+#small{
+color:  #ff6666;
+font-size: 20px;
+font-weight: bold;
+
+}
+
+#subheading {
+color:  #b30000;
+font-size: 40px;
+font-weight: bold;
+border-bottom: 2px  #b30000 solid;
+}
+/* Style the navigation bar */
+  #mainMenu ul{
+  background-color: #f1f1f1;
+  border: 1px solid #555;
+}
+
+#mainMenu a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+#mainMenu li {
+  text-align: center;
+  border-bottom: 1px solid #555;
+}
+
+#mainMenu li:last-child {
+  border-bottom: none;
+}
+
+#mainMenu li a.active {
+  background-color:  #b30000;
+  color: white;
+}
+
+#mainMenu a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+/* Creates columns that floats next to each other */
+.column {
+  float: left;
+  padding: 10px;
+}
+
+/* Left and right column */
+.column.side {
+  width: 25%;
+}
+
+/* Middle column */
+.column.middle {
+  width: 50%;
+}
+/* card effect for post */
+.card {
+   background-color: white;
+     opacity: 0.85;
+   padding: 20px;
+   margin-top: 20px;
+   border: 2px  #e6e6e6 solid;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+img {
+  width:  300px;
+  height: 300px;
+  float: right;
+}
+
+div.container > nav > ul > li > div {
+    width: 100%;
+    margin-top: 13px;
+    padding: 25px;
+    position: absolute;
+    border-bottom: 1px #222222 solid;
+    background-color: #ffffff;
+}
+div.container > nav > ul > li > div > ul {
+    width: 200px;
+    border-left: 2px #555555 solid;
+}
+div.container > nav > ul > li > div > ul > li {
+padding: 3px;
+}
+div.container > nav > ul > li > div > h4 {
+    width: 242px;
+    color: #d60000;
+}
+div.container > nav > ul > li > div > ul > li > a {
+    color: #222222;
+    font-size: 12px;
+}
+div.container > nav > ul > li > div > ul > li > a:hover {
+    color: #d60000;
+}
+
+div ul{
+  display: inline-block;
+  vertical-align: top;
+
+}
+#metersearch {
+  background-image: url("img/parking_meter.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 65%;
+}
+
+.blur {
+    filter: blur(4px);
+}
+
+#centerSearchBox {
+  text-align: center;
+  line-height: 425px;
+}
+
+.transparent1 {
+  background-color:rgba(0, 0, 0, 0);
+}
+
+#alignright {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.headerText {
+  display: block;
+  text-align: center;
+  line-height: 100px;
+  font-weight: bold;
+}
+
+.centerInput {
+  text-align: center;
+  line-height: 50px;
+  margin-left: 200px
+}
+
+#marginTop {
+  margin-top: 50px;
+}
+
+#marginTop2 {
+  margin-top: 75px;
+}
+
+#alignButton {
+  margin-left: 655px;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.centerBox {
+  margin: 0 auto;
+  text-align: center;
+  width: 300px;
+}
+
+
+.centered {
+  margin: auto;
+  text-align: center;
+  width: 50%;
+}
