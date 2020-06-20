@@ -3,5 +3,5 @@
 This is an informative webpage where you can learn facts of each planet in our solar system.
 
 ### Webpage Screenshot
-![Image of Webpage](https://github.com/monasterx3/SolarSystem/blob/master/Solar.png)
+![Image of Webpage](https://github.com/parkhwyy/webpro/blob/master/SolarSystem/solar.png)
 
